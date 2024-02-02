@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "./proto";
+
+service Order{
+    rpc Create(Items) returns (Items);
+    rpc Read(ItemID) returns (Items);
+}
+
+message Items {
+    int32 customerId = 1;
+    int32 productId = 2;
+    int32 quantity = 3;
+    int32 total = 4;
+    int32 id = 5;
+}
+
+message ItemID {
+    int32 id = 1;
+}
